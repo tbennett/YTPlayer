@@ -52,6 +52,7 @@ function onPlayerStateChange(event) {
 
             if(time >= 6) {
                 stopVideo();
+                doStuff();
             }
         }
  
@@ -71,3 +72,6 @@ function stopVideo() {
 
 // https://developers.google.com/youtube/iframe_api_reference
 
+function doStuff() {
+    document.body.style.backgroundColor = "red";
+}
