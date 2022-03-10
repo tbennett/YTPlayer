@@ -1,0 +1,16 @@
+.layout2, .myframe {
+    display: block;
+    margin: auto;
+    border-radius: 2rem;
+}
+
+#info {
+    width: 100vw;
+    height: 500px;
+}
+
+.myframe {
+    margin-top: 2rem;
+    width: 720px;
+    height: 405px;
+}
