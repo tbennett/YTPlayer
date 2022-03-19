@@ -26,6 +26,27 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+//video control buttons
+const myplay = document.getElementById('myplay');
+const mypause = document.getElementById('mypause');
+const slo = document.getElementById('slo');
+
+//add event listners for controls
+myplay.addEventListener('click', (e) => {
+    player.playVideo();
+});
+
+mypause.addEventListener('click', (e) => {
+    player.pauseVideo();
+});
+
+slo.addEventListener('click', (e) => {
+    player.setPlaybackRate(.25);
+});
+
+normal.addEventListener('click', (e) => {
+    player.setPlaybackRate(1);
+});
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
@@ -67,19 +88,31 @@ function stopVideo() {
 function manageCues(time) {
     console.log(time);
 
-    if(time == 6) {
+    if(time == 3) {
         doStuff();
-        player.pauseVideo();
-        setTimeout('player.playVideo();', 5000);
     }
 
     if(time == 10) {
         doMoreStuff();
     }
 
-    if(time == 20) {
+    if(time == 21) {
         changeLayout();
         showInfo();
+        player.pauseVideo();
+        setTimeout('player.playVideo();', 5000);
+    }
+
+    // swapping out a video on the fly!
+    // be mindful that once the new video is swapped out,
+    // it will be affected by the timings of the manageCues function.
+    // to avoid, I'm seeking past the last cue of 26 seconds.
+    if(time == 26) {
+        player.loadVideoById({
+            'videoId': '_QtUGdaCb1c',
+            'startSeconds': 30,
+            'endSeconds': 60
+        });
     }
 }
 
@@ -112,6 +145,6 @@ function showInfo() {
     const info = document.getElementById('info');
     const iframe = document.createElement('IFRAME');
     iframe.classList.add('myframe');
-    iframe.src = "https://en.wikipedia.org/wiki/Steak";
+    iframe.src = "https://www.montalvospirits.com/how-long-should-you-let-steaks-warm-up-before-cooking/";
     info.appendChild(iframe);
 }
