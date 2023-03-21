@@ -111,7 +111,7 @@ function manageCues(time) {
             player.pauseVideo();
             setTimeout('player.playVideo();', 5000);
             break;
-        case 26:
+        case 27:
             player.loadVideoById({
                 'videoId': '_QtUGdaCb1c',
                 'startSeconds': 0,
