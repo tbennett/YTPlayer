@@ -147,8 +147,7 @@ function showInfo() {
     const info = document.getElementById("info");
     const iframe = document.createElement("IFRAME");
     iframe.classList.add("myframe");
-    iframe.src =
-        "https://www.eatpre.com/blogs/gather/how-long-to-let-steak-rest-before-cooking";
+    iframe.src = "./rest.html";
     info.appendChild(iframe);
 }
 
