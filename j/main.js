@@ -147,7 +147,7 @@ function showInfo() {
     const info = document.getElementById("info");
     const iframe = document.createElement("IFRAME");
     iframe.classList.add("myframe");
-    iframe.src = "./rest.html";
+    iframe.src = "rest.html";
     info.appendChild(iframe);
 }
 
